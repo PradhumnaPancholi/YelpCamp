@@ -58,7 +58,7 @@ app.post('/campgrounds', function(req, res){
     var name = req.body.name;
     var image = req.body.image;
     var desc = req.body.description;
-    var newCampground = {name:name, image: image, description:desc }
+    var newCampground = {name:name, image: image, description:description }
     //create a new campground and save it to DB yelp_camp//
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){
@@ -79,12 +79,12 @@ app.get('/campgrounds/new', function(req,res){
 //Show route -> display about particular campground//
 app.get('campgrounds/:id', function(req, res){
     //find the campground with provided id//
-    Campground.findById(req.params.id , function(err, foundCampGround){
+    Campground.findById(req.params.id , function(err, foundCampground){
         if(err){
             console.log(err);
         }else{
             //render show template with more info//
-            res.render("show", {campground : foundCampGround});
+            res.render("show", {campground : foundCampground});
         }
     }); 
 });
