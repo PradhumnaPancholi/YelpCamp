@@ -58,7 +58,7 @@ app.post('/campgrounds', function(req, res){
     var name = req.body.name;
     var image = req.body.image;
     var desc = req.body.description;
-    var newCampground = {name:name, image: image, description:description }
+    var newCampground = {name:name, image: image, description:desc }
     //create a new campground and save it to DB yelp_camp//
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){
