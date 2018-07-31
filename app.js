@@ -68,7 +68,7 @@ app.post('/campgrounds', function(req, res){
             //redirect back to campground page//
             res.redirect('/campgrounds');
         }
-    })   
+    });
 });
 
 //New route -> displays from to add new campground//
