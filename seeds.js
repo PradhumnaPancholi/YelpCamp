@@ -26,19 +26,22 @@ var data = [
 function seedDB(){
     //remove all campgrounds//
     Campground.remove({}, function(err){
-        console.log('removed everything succesfully');
-    });
-
-    //add few campgrounds//
-    data.forEach(function(seed){
-        Campground.create(seed, function(err, data){
-            if(err){
-                console.log(err);
-            }else{
-                console.log('seed.js successfull');
-            }
+        if(err){
+            console.log(err);
+        }
+        console.log('removed user data succesfully');
+        //add few campgrounds//
+        data.forEach(function(seed){
+            Campground.create(seed, function(err, data){
+                if(err){
+                    console.log(err);
+                }else{
+                    console.log('seed.js successfull');
+                }
+            });
         });
     });
+
     //add some comments//
 };
 
