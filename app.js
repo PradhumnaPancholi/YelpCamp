@@ -1,7 +1,8 @@
 var express    = require('express'),
     app        = express(),
     bodyParser = require('body-parser'),
-    mongoose   = require('mongoose')
+    mongoose   = require('mongoose'),
+    Campground = require('./models/campground')
 
 //connecton with database//
 mongoose.connect("mongodb://pradhumna:data6629@ds253891.mlab.com:53891/pnpcamp");
@@ -9,15 +10,6 @@ mongoose.connect("mongodb://pradhumna:data6629@ds253891.mlab.com:53891/pnpcamp")
 app.use(bodyParser.urlencoded({extended: true}));
 //addding view engine//
 app.set('view engine', 'ejs');
-
-//schema setup//
-var campgroundSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String
-});
-
-var Campground = mongoose.model("Campground", campgroundSchema);
 
 /*Campground.create(
     {
