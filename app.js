@@ -5,7 +5,7 @@ var express    = require('express'),
     Campground = require('./models/campground'),
     seedDB     = require('./seeds')
 
-seedDB();
+//seedDB();
 //app config//
 mongoose.connect("mongodb://pradhumna:data6629@ds253891.mlab.com:53891/pnpcamp");
 app.use(bodyParser.urlencoded({extended: true}));
@@ -57,7 +57,6 @@ app.get('/campgrounds/:id', function(req, res){
         if(err){
             console.log(err);
         }else{
-            console.log(foundCampground);
             //render show template with more info//
             res.render("show", {campground : foundCampground});
         }
