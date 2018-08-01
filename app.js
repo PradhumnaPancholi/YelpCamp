@@ -2,30 +2,14 @@ var express    = require('express'),
     app        = express(),
     bodyParser = require('body-parser'),
     mongoose   = require('mongoose'),
-    Campground = require('./models/campground')
+    Campground = require('./models/campground'),
+    seedDB     = require('./seeds')
 
-//connecton with database//
+seedDB();
+//app config//
 mongoose.connect("mongodb://pradhumna:data6629@ds253891.mlab.com:53891/pnpcamp");
-
 app.use(bodyParser.urlencoded({extended: true}));
-//addding view engine//
 app.set('view engine', 'ejs');
-
-/*Campground.create(
-    {
-        name: "Niagara Falls", 
-        image: "https://images.unsplash.com/photo-1461775899071-bc47db1478c9?ixlib=rb-0.3.5&s=6f9303fb26cfedf612fe6dde01f7a83c&auto=format&fit=crop&w=752&q=80",
-        description: "One of the most beautifu places in Ontario. FYI, also one of the seven wonders in the world"
-
-    }, function(err,campground){
-        if(err){
-            console.log(err);
-        } else{
-            console.log("newly added capground");
-            console.log(campground);
-        }
-    }
-);*/
 
 //landing page//
 app.get('/', function(req,res){
