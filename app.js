@@ -66,7 +66,7 @@ app.get('/campgrounds/:id', function(req, res){
 //==================================Comment Router=================================================//
 app.get('/campgrounds/:id/comments/new', function(req, res){
     //find campground by id//
-    Campground.find(req.params.id, function(err, campground){
+    Campground.findById(req.params.id, function(err, campground){
         if(err){
             console.log(err);
         }else{
