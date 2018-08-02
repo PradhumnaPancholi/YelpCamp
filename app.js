@@ -70,7 +70,7 @@ app.get('/campgrounds/:id/comments/new', function(req, res){
         if(err){
             console.log(err);
         }else{
-            res.render('comments/new');
+            res.render('comments/new', {campground : campground});
         } 
     });  
 });
