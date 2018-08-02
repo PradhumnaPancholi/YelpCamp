@@ -65,7 +65,14 @@ app.get('/campgrounds/:id', function(req, res){
 
 //==================================Comment Router=================================================//
 app.get('/campgrounds/:id/comments/new', function(req, res){
-    res.send('comments/new');
+    //find campground by id//
+    Campground.find(req.params.id, function(err, campground){
+        if(err){
+            console.log(err);
+        }else{
+            res.render('comments/new');
+        } 
+    });  
 });
 //=================================================================================================//
 app.listen(process.env.PORT, process.env.IP);
