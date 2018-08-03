@@ -85,7 +85,8 @@ app.post('campgrounds/:id/comments', function(req, res){
             //create comment//
             Comment.create(req.body.comment, function(err, comment){
                 if(err){
-                    console.log(err)
+                    console.log(err);
+                    res.redirect('/campgrounds');
                 }else{
                      //associate comment with campground//
                      campground.comments.push(comment);
