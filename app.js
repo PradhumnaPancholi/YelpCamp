@@ -76,7 +76,7 @@ app.get('/campgrounds/:id/comments/new', function(req, res){
     });  
 });
 
-app.post('campgrounds/:id/comments', function(req, res){
+app.post('/campgrounds/:id/comments', function(req, res){
     //find the campground using id//
     Campground.findById(req.params.id, function(err, campground){
         if(err){
