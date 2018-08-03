@@ -88,7 +88,7 @@ app.post('campgrounds/:id/comments', function(req, res){
                     console.log(err)
                 }else{
                      //associate comment with campground//
-                     campground.comment.push(comment);
+                     campground.comments.push(comment);
                      campground.save();
                      //redirect to show page//
                      res.redirect('/campgrounds/' + campground._id);
