@@ -143,8 +143,11 @@ app.get('/login', function(req, res){
 });
 
 //handle login logic//
-app.post('/login', function(req, res){
-    res.send('Login logic');
+app.post('/login', passport.authenticate('local',
+    {
+        successRedirect: '/campgrounds', 
+        failureRedirect: '/login'
+    }),function(req, res){
 });
 //==================================================================================================//
 app.listen(process.env.PORT, process.env.IP);
