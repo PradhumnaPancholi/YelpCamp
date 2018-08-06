@@ -15,6 +15,19 @@ mongoose.connect("mongodb://pradhumna:data6629@ds253891.mlab.com:53891/pnpcamp")
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
+//passport config//
+app.use(require('express-session')({
+    secret: 'I am the Best',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
 //landing page//
 app.get('/', function(req,res){
     res.render('landing');
