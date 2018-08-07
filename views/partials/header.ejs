@@ -14,9 +14,14 @@
                 </button>
                     <div class = "collapse navbar-collapse" id = 'navbarNavAltMarkup'>
                         <div class="navbar-nav ml-auto">
-                            <a href = '/login' class = 'nav-item nav-link'>Log In</a>
-                            <a href = '/register'class = 'nav-item nav-link'>Sign Up</a>
-                            <a href = '/logout' class = 'nav-item nav-link'>Log Out</a>
+                            <% if(!currentUser){ %>
+                                <a href = '/login' class = 'nav-item nav-link'>Log In</a>
+                                <a href = '/register'class = 'nav-item nav-link'>Sign Up</a>
+                            <% }else{ %>
+                                <a class = 'nav-item nav-link'><%= currentUser.username %></a>
+                                <a href = '/logout' class = 'nav-item nav-link'>Log Out</a>
+                            <% } %>
+                     
                         </div>
                     </div>
              
