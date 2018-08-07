@@ -6,6 +6,11 @@ h1{
     text-align: center;
 }
 
+#form{
+    width: 30%;
+    margin: 2% auto;
+}
+
 .btn{
     display: inline;
 }

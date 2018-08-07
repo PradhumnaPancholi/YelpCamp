@@ -4,21 +4,23 @@
     <div class="row">
         <h1>Create a new campground</h1>
             <form action="/campgrounds" method = "POST">
-                <div class="form-group">
-                    <input class = "form-control" type = "text" name = "name" placeholder="name">
+                <div id = 'form'>
+                    <div class="form-group">
+                        <input class = "form-control" type = "text" name = "name" placeholder="name">
+                    </div>
+                    <div class="form-group">
+                        <input class = "form-control" type = "text" name = "image" placeholder="image url">  
+                    </div>
+                    <div class="form-group">
+                        <input class = "form-control" type = "text" name = "description" placeholder= "description">  
+                    </div>  
+                    <div class="from-group">
+                        <button class = "btn btn-lg btn-primary" type = "submit">Submit</button>       
+                    </div>            
+                    <div class="from-group">
+                        <button class = "btn btn-lg btn-primary" href = "/campgrounds">Back</button>       
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input class = "form-control" type = "text" name = "image" placeholder="image url">  
-                </div>
-                <div class="form-group">
-                    <input class = "form-control" type = "text" name = "description" placeholder= "description">  
-                </div>  
-                <div class="from-group">
-                    <button class = "btn btn-lg btn-primary" type = "submit">Submit</button>       
-                </div>            
-                <div class="from-group">
-                        <a class = "btn btn-lg btn-primary" href = "/campgrounds">Back</a>       
-                </div>   
             </form>
     </div> 
 </div>
