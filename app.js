@@ -81,7 +81,7 @@ app.get('/campgrounds/:id', function(req, res){
 });
 
 //==================================Comment Routes=================================================//
-app.get('/campgrounds/:id/comments/new', function(req, res){
+app.get('/campgrounds/:id/comments/new', isLoggedIn, function(req, res){
     //find campground by id//
     Campground.findById(req.params.id, function(err, campground){
         if(err){
@@ -92,7 +92,7 @@ app.get('/campgrounds/:id/comments/new', function(req, res){
     });  
 });
 
-app.post('/campgrounds/:id/comments', function(req, res){
+app.post('/campgrounds/:id/comments', isLoggedIn, function(req, res){
     //find the campground using id//
     Campground.findById(req.params.id, function(err, campground){
         if(err){
@@ -155,5 +155,13 @@ app.get('/logout', function(req, res){
     req.logout();
     res.redirect('/campgrounds');
 });
+
+//middleware to check if user is logged in//
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/login');
+};
 //==================================================================================================//
 app.listen(process.env.PORT, process.env.IP);
