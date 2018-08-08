@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
             type = mongoose.Schema.Types.ObjectId,
             ref  = 'User'
          },
-         username: String
+            username: String
      }
  });
 module.exports = mongoose.model('Comment', commentSchema); 
