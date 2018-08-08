@@ -28,13 +28,18 @@ router.post('/campgrounds/:id/comments', isLoggedIn, function(req, res){
                     console.log(err);
                     res.redirect('/campgrounds');
                 }else{
+                     // add username and id //
+                     comment.auther.id = req.user._id;
+                     comment.auther.username = req.user.username;
+                     //save  comment//
+                     comment.save();
                      //associate comment with campground//
                      campground.comments.push(comment);
                      campground.save();
                      //redirect to show page//
                      res.redirect('/campgrounds/' + campground._id);
                 }
-            });
+            });     
         }
     });
 });

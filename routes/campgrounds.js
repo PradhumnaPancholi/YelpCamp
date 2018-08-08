@@ -32,7 +32,7 @@ router.post('/campgrounds', function(req, res){
 });
 
 //New route -> displays from to add new campground//
-router.get('/campgrounds/new', function(req,res){
+router.get('/campgrounds/new',isLoggedIn, function(req,res){
     res.render('campgrounds/new');
 });
 
@@ -48,5 +48,13 @@ router.get('/campgrounds/:id', function(req, res){
         }
     }); 
 });
+
+//middleware to check if user is logged in//
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/login');
+};
 
 module.exports = router;
