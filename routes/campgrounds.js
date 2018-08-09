@@ -56,7 +56,14 @@ router.get('/:id', function(req, res){
 
 //Edit Route//
 router.get('/:id/edit', function(req, res){
-    res.render('campgrounds/edit');
+    Campground.findById(releaseEvents.params.id, function(err, foundCampground){
+        if(err){
+            res.redirect('/campgrounds');
+        }else{
+            res.render('campgrounds/edit', {campground : foundCampground});
+        }
+    });
+    
 });
 
 
