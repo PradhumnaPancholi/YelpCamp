@@ -16,8 +16,12 @@ h1{
     height: 500px;
 }
 
-/*button inside card (show page)*/
-#button{
+/*for buttons inside card (show page)*/
+.btn-outline-warning{
+    width: 7%;
+}
+
+.btn-outline-danger{
     display: inline;
 }
 
