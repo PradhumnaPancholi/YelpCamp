@@ -20,7 +20,7 @@ router.get('/campgrounds/new', isLoggedIn, function(req,res){
 });
 
 //Create route -> adds new campground//
-router.post('/campgrounds', function(req, res){
+router.post('/campgrounds',isLoggedIn, function(req, res){
     //get data from form and add to campground array//
     var name = req.body.name;
     var image = req.body.image;
