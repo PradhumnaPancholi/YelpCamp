@@ -22,7 +22,7 @@ router.post('/campgrounds', function(req, res){
     var desc = req.body.description;
     var newCampground = {name: name, image: image, description: desc }
     //create a new campground and save it to DB yelp_camp//
-    Campground.create(newCampground, function(err, newlyCreated){
+    Campground.create(newCampground, isLoggedIn ,function(err, newlyCreated){
         if(err){
             console.log(err);
         }else{
@@ -32,7 +32,7 @@ router.post('/campgrounds', function(req, res){
 });
 
 //New route -> displays from to add new campground//
-router.get('/campgrounds/new',isLoggedIn, function(req,res){
+router.get('/campgrounds/new', isLoggedIn, function(req,res){
     res.render('campgrounds/new');
 });
 
