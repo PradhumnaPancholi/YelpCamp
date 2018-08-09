@@ -55,6 +55,9 @@ router.get('/:id', function(req, res){
 });
 
 //Edit Route//
+router.get('/:id/edit', function(req, res){
+    res.render('campgrounds/edit');
+});
 
 
 //middleware to check if user is logged in//
