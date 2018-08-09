@@ -1,14 +1,15 @@
-var express       = require('express'),
-    app           = express(),
-    bodyParser    = require('body-parser'),
-    mongoose      = require('mongoose'),
-    passport      = require('passport'),
-    LocalStrategy = require('passport-local'),
-    Campground    = require('./models/campground'),
-    Comment       = require('./models/comment'),
-    User          = require('./models/user')
+var express        = require('express'),
+    app            = express(),
+    bodyParser     = require('body-parser'),
+    mongoose       = require('mongoose'),
+    passport       = require('passport'),
+    LocalStrategy  = require('passport-local'),
+    Campground     = require('./models/campground'),
+    Comment        = require('./models/comment'),
+    User           = require('./models/user'),
+    methodOverride = require('method-override')
 
-var camogroundRoutes  = require('./routes/campgrounds'),
+var campgroundRoutes  = require('./routes/campgrounds'),
     commentRoutes     = require('./routes/comments'),
     authRoutes        = require('./routes/auth') 
     
@@ -17,6 +18,7 @@ mongoose.connect("mongodb://pradhumna:data6629@ds253891.mlab.com:53891/pnpcamp")
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+app.use(methodOverride('_method'));
 
 //passport config//
 app.use(require('express-session')({
@@ -35,9 +37,9 @@ app.use(function(req, res, next){
     next();
 });
 
-app.use(camogroundRoutes);
-app.use(commentRoutes);
-app.use(authRoutes);
+app.use('/campgrounds',campgroundRoutes);
+app.use('/campgrounds/:id/comments', commentRoutes);
+app.use('/', authRoutes);
 
 //==================================================================================================//
 app.listen(process.env.PORT, process.env.IP);

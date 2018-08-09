@@ -27,8 +27,8 @@
                 <% campground.comments.forEach(function(comment){ %>
                     <div class = 'row'>
                         <div class = 'col-md-12'>
-                            <strong><%= comment.author.username %></strong>
-                            <span class = 'pull-right'>8 days ago</span>
+                            <strong>Created by: <%= comment.author.username %></strong>
+                            <span class ='ml-auto'>8 days ago</span>
                             <p>
                                 <%= comment.text %>
                             </p>

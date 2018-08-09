@@ -3,7 +3,7 @@ var express    = require('express'),
     Campground = require('../models/campground')
 
 //Index route -> shows all the campgrounds//
-router.get('/campgrounds', function(req,res){
+router.get('/', function(req,res){
     //get all campgrounds from database//
     Campground.find({}, function(err, allCampgrounds){
         if(err){
@@ -15,12 +15,12 @@ router.get('/campgrounds', function(req,res){
 });
 
 //New route -> displays from to add new campground//
-router.get('/campgrounds/new', isLoggedIn, function(req,res){
+router.get('/new', isLoggedIn, function(req,res){
     res.render('campgrounds/new');
 });
 
 //Create route -> adds new campground//
-router.post('/campgrounds',isLoggedIn, function(req, res){
+router.post('/',isLoggedIn, function(req, res){
     //get data from form and add to campground array//
     var name = req.body.name;
     var image = req.body.image;
@@ -42,7 +42,7 @@ router.post('/campgrounds',isLoggedIn, function(req, res){
 });
 
 //Show route -> display about particular campground//
-router.get('/campgrounds/:id', function(req, res){
+router.get('/:id', function(req, res){
     //find the campground with provided id//
     Campground.findById(req.params.id).populate('comments').exec(function(err, foundCampground){
         if(err){
@@ -53,6 +53,9 @@ router.get('/campgrounds/:id', function(req, res){
         }
     }); 
 });
+
+//Edit Route//
+
 
 //middleware to check if user is logged in//
 function isLoggedIn(req, res, next){
