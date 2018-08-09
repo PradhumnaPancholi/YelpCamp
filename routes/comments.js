@@ -17,7 +17,7 @@ router.get('/new', isLoggedIn, function(req, res){
 });
 
 //adds new comment//
-router.post('/comments', isLoggedIn, function(req, res){
+router.post('/', isLoggedIn, function(req, res){
     //find the campground using id//
     Campground.findById(req.params.id, function(err, campground){
         if(err){
