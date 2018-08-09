@@ -5,9 +5,9 @@
         <header class = "jumbotron">
             <div class="conatiner">
                 <h1>Welcome To YelpCamp</h1>
-                    <p>View our hand-picked campgrounds from all over the world.</p>
+                    <p><center>View our hand-picked campgrounds from all over the world.</center></p>
                     <p>
-                        <a class = "btn btn-primary btn-lg" href = "/campgrounds/new">Add new campground</a>
+                        <center><a class = "btn btn-primary btn-lg" href = "/campgrounds/new">Add new campground</a></center>
                     </p>
             </div>     
         </header>
@@ -17,7 +17,7 @@
             <% campgrounds.forEach(function(campground){ %>
                 <div class ="col-md-3 col-sm-6">
                     <div class = "card">
-                        <img src ="<%= campground.image %>">
+                        <img class = 'card-img-top' src ="<%= campground.image %>">
                         <div class="card-title">
                             <h4><%= campground.name%></h4>
                         </div>
