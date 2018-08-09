@@ -14,6 +14,11 @@ router.get('/campgrounds', function(req,res){
     });
 });
 
+//New route -> displays from to add new campground//
+router.get('/campgrounds/new', isLoggedIn, function(req,res){
+    res.render('campgrounds/new');
+});
+
 //Create route -> adds new campground//
 router.post('/campgrounds', function(req, res){
     //get data from form and add to campground array//
@@ -29,15 +34,11 @@ router.post('/campgrounds', function(req, res){
     Campground.create(newCampground, isLoggedIn ,function(err, newlyCreated){
         if(err){
             console.log(err);
+            console.log('can not save data');
         }else{
             res.redirect('/campgrounds');
         }
     });
-});
-
-//New route -> displays from to add new campground//
-router.get('/campgrounds/new', isLoggedIn, function(req,res){
-    res.render('campgrounds/new');
 });
 
 //Show route -> display about particular campground//
