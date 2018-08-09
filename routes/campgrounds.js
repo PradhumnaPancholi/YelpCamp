@@ -31,7 +31,7 @@ router.post('/campgrounds',isLoggedIn, function(req, res){
     }
     var newCampground = {name: name, image: image, description: desc, author: author}
     //create a new campground and save it to DB yelp_camp//
-    Campground.create(newCampground, isLoggedIn ,function(err, newlyCreated){
+    Campground.create(newCampground, function(err, newlyCreated){
         if(err){
             console.log(err);
             console.log('can not save data');
