@@ -5,9 +5,15 @@ body{
 h1{
     text-align: center;
 }
-
+/*for imges on index page*/
 .card-img-top{
     height: 200px;
+}
+
+/*for images on show page*/
+.img-fluid{
+    max-width: 100%;
+    height: auto;
 }
 
 #form{
