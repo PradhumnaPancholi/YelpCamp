@@ -16,7 +16,7 @@ h1{
     height: 500px;
 }
 
-/*for buttons on show page*/
+/*for show page*/
 .btn-outline-warning{
     width: 7%;
 }
@@ -25,8 +25,8 @@ h1{
     display: inline;
 }
 
-.btn-success{
-    margin: auto;
+.card-block{
+    margin-top: 1%;
 }
 /*======================================*/
 #form{
