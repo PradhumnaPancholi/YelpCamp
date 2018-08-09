@@ -13,7 +13,7 @@ h1{
 /*for images on show page*/
 .img-fluid{
     max-width: 100%;
-    height: auto;
+    height: 500px;
 }
 
 #form{
