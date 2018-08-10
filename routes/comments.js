@@ -45,6 +45,11 @@ router.post('/', isLoggedIn, function(req, res){
     });
 });
 
+//Edit Route//
+router.get('/:comment_id/id', function(req, res){
+    res.send('comment edit');
+});
+
 //middleware to check if user is logged in//
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
