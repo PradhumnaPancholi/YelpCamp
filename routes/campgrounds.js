@@ -63,16 +63,20 @@ router.get('/:id/edit', function(req, res){
                 res.redirect('/campgrounds');
             }else{
                 //if user owns the campground//
-                console.log(foundCampground.author.id);
-                console.log(req.user._id);
-                res.render('campgrounds/edit', {campground : foundCampground});
+                if(foundCampground.author.id.equals(req.user._id)){
+                    res.render('campgrounds/edit', {campground : foundCampground});
+                } else{
+                    //redirect somewhere//
+                    res.send('You are not authorized');
+                }
+                
             }
         });       
     }else {
         console.log('You need to sign in');
     }
         
-        //redirect somewhere//
+        
     //redirect if not logged in//
     
     
