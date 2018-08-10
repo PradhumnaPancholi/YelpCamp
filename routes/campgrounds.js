@@ -56,13 +56,25 @@ router.get('/:id', function(req, res){
 
 //Edit Route//
 router.get('/:id/edit', function(req, res){
-    Campground.findById(req.params.id, function(err, foundCampground){
-        if(err){
-            res.redirect('/campgrounds');
-        }else{
-            res.render('campgrounds/edit', {campground : foundCampground});
-        }
-    });
+    //if user logged in//
+    if(req.isAuthenticated()){
+        Campground.findById(req.params.id, function(err, foundCampground){
+            if(err){
+                res.redirect('/campgrounds');
+            }else{
+                //if user owns the campground//
+                console.log(campground.author.id);
+                console.log(req.user._id);
+                res.render('campgrounds/edit', {campground : foundCampground});
+            }
+        });       
+    }else {
+        console.log('You need to sign in');
+    }
+        
+        //redirect somewhere//
+    //redirect if not logged in//
+    
     
 });
 
