@@ -63,7 +63,7 @@ router.get('/:id/edit', function(req, res){
                 res.redirect('/campgrounds');
             }else{
                 //if user owns the campground//
-                console.log(campground.author.id);
+                console.log(foundCampground.author.id);
                 console.log(req.user._id);
                 res.render('campgrounds/edit', {campground : foundCampground});
             }
