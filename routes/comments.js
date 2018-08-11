@@ -46,7 +46,7 @@ router.post('/', isLoggedIn, function(req, res){
 });
 
 //Edit Route//
-router.get('/:comment_id/edit', function(req, res){
+router.get('/:comment_id/edit', checkCommentOwner, function(req, res){
     Comment.findById(req.params.comment_id, function(err, foundComment){
         if(err){
             console.log(err);
