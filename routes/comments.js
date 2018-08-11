@@ -69,7 +69,13 @@ router.put('/:comment_id', function(req, res){
 
 //Delete Route//
 router.delete('/:comment_id', function(req, res){
-    res.send('DElete');
+    Comment.findByIdAndRemove(req.params.comment_id, function(err){
+        if(err){
+            res.redirect('back');
+        }else{
+            res.redirect('/campgrounds/' + req.params.id);
+        }
+    });
 });
 
 //middleware to check if user is logged in//
