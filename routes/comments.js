@@ -46,8 +46,14 @@ router.post('/', isLoggedIn, function(req, res){
 });
 
 //Edit Route//
-router.get('/:comment_id/id', function(req, res){
-    res.send('comment edit');
+router.get('/:comment_id/edit', function(req, res){
+    Comment.findById(req.params.comment._id, function(err, foundComment){
+        if(err){
+            console.log(err)
+        }else{
+            res.render('edit', {campground_id : req.params.id, comment : foundComment});
+        }
+    });  
 });
 
 //middleware to check if user is logged in//
