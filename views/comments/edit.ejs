@@ -2,7 +2,7 @@
 
 <div class="container" id = 'form'>
     <div class="row">
-            <form action="/campgrounds/<%= campground_id %>/comments/<%= comment._id%>?_method=PUT" method = "POST">
+            <form action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method = "POST">
                 <h1>Edit comment </h1>
                 <div class="form-group">
                     <input class = "form-control" type = "text" name = "comment[text]" value = '<%= comment.text %>'>

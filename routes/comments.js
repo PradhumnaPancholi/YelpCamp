@@ -47,13 +47,24 @@ router.post('/', isLoggedIn, function(req, res){
 
 //Edit Route//
 router.get('/:comment_id/edit', function(req, res){
-    Comment.findById(req.params.comment._id, function(err, foundComment){
+    Comment.findById(req.params.comment_id, function(err, foundComment){
         if(err){
-            console.log(err)
+            console.log(err);
         }else{
             res.render('edit', {campground_id : req.params.id, comment : foundComment});
         }
     });  
+});
+
+//Update Route//
+router.put('/:comment_id', function(req, res){
+    Comment.findByIdAndUpdate(req.params.comment._id, req.body.comment, function(err){
+        if(err){
+            console.log(err);
+        }else{
+            res.render('show');
+        }
+    });
 });
 
 //middleware to check if user is logged in//
