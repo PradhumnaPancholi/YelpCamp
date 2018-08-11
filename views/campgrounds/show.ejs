@@ -22,8 +22,8 @@
                 <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
                 <a class = 'btn btn-xs btn-outline-warning' href = '/campgrounds/<%= campground._id %>/edit'>Edit</a>
                 <!--Delete-->
-                <form action = '/campgrounds/<%=campground.id%>?_method=DELETE' method="POST">
-                    <button id = 'button' class = 'btn btn-sm btn-outline-danger'>Delete</button>
+                <form class = 'dbutton' action = '/campgrounds/<%=campground.id%>?_method=DELETE' method="POST">
+                    <button class = 'btn btn-xs btn-outline-danger'>Delete</button>
                 </form>
                 <% } %>
                 <!--=======================================================================================-->
@@ -45,6 +45,10 @@
                                 href = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit'>
                                 Edit
                             </a>
+                            <!--delete comment-->
+                            <form class = 'dbutton' action = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=Delete' method = 'POST'>
+                                <button class = 'btn btn-xs btn-outline-danger'>Delete</button>
+                            </form>
                         </div>
                     </div>
                 <% });%>

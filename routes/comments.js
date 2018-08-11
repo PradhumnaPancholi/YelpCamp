@@ -67,6 +67,11 @@ router.put('/:comment_id', function(req, res){
     });
 });
 
+//Delete Route//
+router.delete('/:comment_id', function(req, res){
+    res.send('DElete');
+});
+
 //middleware to check if user is logged in//
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
