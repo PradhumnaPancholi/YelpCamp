@@ -58,7 +58,7 @@ router.get('/:comment_id/edit', function(req, res){
 
 //Update Route//
 router.put('/:comment_id', function(req, res){
-    Comment.findByIdAndUpdate(req.params.comment._id, req.body.comment, function(err, updatedComment){
+    Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment){
         if(err){
             console.log(err);
         }else{
