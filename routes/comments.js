@@ -51,7 +51,7 @@ router.get('/:comment_id/edit', function(req, res){
         if(err){
             console.log(err);
         }else{
-            res.redirect('edit', {campground_id : req.params.id, comment : foundComment});
+            res.render('edit', {campground_id : req.params.id, comment : foundComment});
         }
     });  
 });
