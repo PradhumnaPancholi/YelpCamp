@@ -51,7 +51,7 @@ router.get('/:comment_id/edit', function(req, res){
         if(err){
             console.log(err);
         }else{
-            res.render('edit', {campground_id : req.params.id, comment : foundComment});
+            res.redirect('edit', {campground_id : req.params.id, comment : foundComment});
         }
     });  
 });
@@ -62,7 +62,7 @@ router.put('/:comment_id', function(req, res){
         if(err){
             console.log(err);
         }else{
-            res.render('show');
+            res.rendirect('/campgrounds/' + req.params.id);
         }
     });
 });
