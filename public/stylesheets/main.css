@@ -21,9 +21,8 @@ h1{
 }
 
 /*======================================*/
-#input-form{
-    margin: 0 auto;
-    text-align: center;
+.form-group{
+    width: 50%;
 }
 
 .btn{
