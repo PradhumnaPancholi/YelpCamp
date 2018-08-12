@@ -29,7 +29,7 @@
                 <!--=======================================================================================-->
             </div>
             <div class = 'card'>
-                <div class = 'card-block'>
+                <div class = 'card-body'>
                     <div class = 'float-right'>
                         <a class = 'btn btn-success' href = '/campgrounds/<%= campground._id %>/comments/new'>Add a comment</a>
                     </div>
@@ -48,18 +48,16 @@
                                         href = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit'>
                                         Edit
                                     </a>
-                                        <!--delete comment-->
-                                        <form class = 'dbutton' action = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=Delete' method = 'POST'>
-                                            <button class = 'btn btn-xs btn-outline-danger'>Delete</button>
-                                        </form>
-                                        <% } %>
-                                    </div>
+                                    <!--delete comment-->
+                                    <form class = 'dbutton' action = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=Delete' method = 'POST'>
+                                        <button class = 'btn btn-xs btn-outline-danger'>Delete</button>
+                                    </form>
+                                    <% } %>
                                 </div>
+                            </div>
                             <% });%>
-                        </div>
-
-            </div>
-            
+                </div>
+            </div>     
         </div>
     </div>
 </div>

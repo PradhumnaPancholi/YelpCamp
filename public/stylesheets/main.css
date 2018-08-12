@@ -16,14 +16,10 @@ h1{
     height: 500px;
 }
 
-/*for show page*/
 .dbutton{
     display: inline;
 }
 
-.card-block{
-    margin-top: 1%;
-}
 /*======================================*/
 #form{
     margin-left: auto;
