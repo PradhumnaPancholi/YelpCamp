@@ -31,7 +31,7 @@
             <div class = 'card'>
                 <div class = 'card-body'>
                     <div class = 'float-right'>
-                        <a class = 'btn btn-success' href = '/campgrounds/<%= campground._id %>/comments/new'>Add a comment</a>
+                        <a class = 'btn btn-xs btn-success' href = '/campgrounds/<%= campground._id %>/comments/new'>Add a comment</a>
                     </div>
                     <hr>
                         <% campground.comments.forEach(function(comment){ %>
@@ -44,13 +44,13 @@
                                     </p>
                                     <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
                                     <!--edit comment-->
-                                    <a class = 'btn btn-xs btn-outline-warning' 
+                                    <a class = 'btn btn-outline-warning' 
                                         href = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit'>
                                         Edit
                                     </a>
                                     <!--delete comment-->
                                     <form class = 'dbutton' action = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=Delete' method = 'POST'>
-                                        <button class = 'btn btn-xs btn-outline-danger'>Delete</button>
+                                        <button class = 'btn  btn-outline-danger'>Delete</button>
                                     </form>
                                     <% } %>
                                 </div>
