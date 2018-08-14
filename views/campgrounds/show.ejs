@@ -33,7 +33,7 @@
                     <div class = 'float-right'>
                         <a class = 'btn btn-xs btn-success' href = '/campgrounds/<%= campground._id %>/comments/new'>Add a comment</a>
                     </div>
-                    <hr>
+                    
                         <% campground.comments.forEach(function(comment){ %>
                             <div class = 'row'>
                                 <div class = 'col-md-12'>
@@ -42,6 +42,7 @@
                                     <p>
                                         <%= comment.text %>
                                     </p>
+                                    <hr>
                                     <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
                                     <!--edit comment-->
                                     <a class = 'btn btn-outline-warning' 
