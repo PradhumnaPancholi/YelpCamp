@@ -5,6 +5,7 @@
 
 .main-text{
     position: absolute;
-    text-align: center;
-    padding-top: 40vh;
+    top: 50px;
+    width: 96.66666666666666%;
+    color: #FFF;
 }
