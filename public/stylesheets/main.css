@@ -1,9 +1,10 @@
+body{
+    padding-top: 70px; 
+}
+
 /*for landing page*/
 #carouselExampleSlidesOnly{
     padding: 0px;
-}
-body{
-    padding-top: 70px; 
 }
 
 h1{
