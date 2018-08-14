@@ -9,6 +9,10 @@
     height: 100%;
 }
 
+.carousel-inner {
+    height: 100%;
+}
+
 .main-text{
     position: absolute;
     text-align: center;
