@@ -1,6 +1,11 @@
 /*for landing page*/
 #carouselExampleSlidesOnly{
     padding: 0px;
+}
+
+.corousel,
+.item,
+.active{
     height: 100%;
 }
 
