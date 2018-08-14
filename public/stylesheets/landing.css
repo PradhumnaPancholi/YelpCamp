@@ -5,7 +5,7 @@
 
 #landing-header{
     z-index: 1;
-    position: relative;
+    position: absolute;
     text-align: center;
     padding-top: 40vh;
 }
