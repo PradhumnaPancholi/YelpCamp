@@ -5,7 +5,8 @@
 
 .main-text{
     position: absolute;
-    top: 50px;
+    text-align: center;
+    top: 40vh;
     width: 96.66666666666666%;
     color: #FFF;
 }
