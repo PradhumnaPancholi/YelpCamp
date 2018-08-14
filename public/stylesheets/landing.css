@@ -7,10 +7,12 @@
 .item,
 .active{
     height: auto;
+    width: 100%;
 }
 
 .carousel-inner {
     height: auto;
+    width: 100%;
 }
 
 .main-text{
