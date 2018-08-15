@@ -20,10 +20,10 @@
                 </div>
                 <!-- authorization-->
                 <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
-                <a class = 'btn btn-outline-warning' href = '/campgrounds/<%= campground._id %>/edit'>Edit</a>
+                <a class = 'btn btn-warning' href = '/campgrounds/<%= campground._id %>/edit'>Edit</a>
                 <!--Delete-->
                 <form class = 'dbutton' action = '/campgrounds/<%=campground.id%>?_method=DELETE' method="POST">
-                    <button class = 'btn btn-xs btn-outline-danger'>Delete</button>
+                    <button class = 'btn-outline-danger'>Delete</button>
                 </form>
                 <% } %>
                 <!--=======================================================================================-->
