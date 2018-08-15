@@ -20,10 +20,10 @@
                 </div>
                 <!-- authorization-->
                 <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
-                <a class = 'btn btn-warning' href = '/campgrounds/<%= campground._id %>/edit'>Edit</a>
+                <a class = 'btn btn-sm btn-warning' href = '/campgrounds/<%= campground._id %>/edit'>Edit</a>
                 <!--Delete-->
                 <form class = 'dbutton' action = '/campgrounds/<%=campground.id%>?_method=DELETE' method="POST">
-                    <button class = 'btn-outline-danger'>Delete</button>
+                    <button class = 'btn btn-sm btn-outline-danger'>Delete</button>
                 </form>
                 <% } %>
             </div>
@@ -31,7 +31,7 @@
             <div class = 'card'>
                 <div class = 'card-body'>
                     <div class = 'float-right'>
-                        <a class = 'btn btn-xs btn-success' href = '/campgrounds/<%= campground._id %>/comments/new'>Add a comment</a>
+                        <a class = 'btn btn-sm btn-success' href = '/campgrounds/<%= campground._id %>/comments/new'>Add a comment</a>
                     </div>
                         <% campground.comments.forEach(function(comment){ %>
                             <div class = 'row'>
@@ -51,7 +51,7 @@
                                                     <a  href = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit' class = 'btn btn-sm btn-warning'>Edit</a>
                                                     <!--delete comment-->
                                                     <form class = 'dbutton' action = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=Delete' method = 'POST'>
-                                                        <button class = 'btn btn-danger'>Delete</button>
+                                                        <button class = 'btn btn-sm btn-danger'>Delete</button>
                                                     </form>
                                                 </div>
                                                 <% } %>
