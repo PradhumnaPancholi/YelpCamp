@@ -13,9 +13,9 @@
             <div class = 'card mb-3'>
                 <img class = 'img-fluid' src = "<%= campground.image %>">
                 <div class = 'card-body'>
-                    <p class = 'text-right'>$9.00/night</p>
+                    <h4 class = 'text-right'>$9.00/night</h4>
                     <h4><a class = 'card-title'><%= campground.name %></a></h4>
-                    <p class = 'card-text'><%= campground.description %></p>
+                    <p><%= campground.description %></p>
                     <em>Submitted by: <%= campground.author.username %></em>
                 </div>
                 <!-- authorization-->
@@ -28,7 +28,6 @@
                 <% } %>
             </div>
                 <!--=======================================================================================-->
-            
             <div class = 'card'>
                 <div class = 'card-body'>
                     <div class = 'float-right'>
