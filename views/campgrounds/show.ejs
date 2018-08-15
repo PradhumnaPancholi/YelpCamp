@@ -20,7 +20,7 @@
                 </div>
                 <!-- authorization-->
                 <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
-                <a class = 'btn btn-xs btn-outline-warning' href = '/campgrounds/<%= campground._id %>/edit'>Edit</a>
+                <a class = 'btn btn-outline-warning' href = '/campgrounds/<%= campground._id %>/edit'>Edit</a>
                 <!--Delete-->
                 <form class = 'dbutton' action = '/campgrounds/<%=campground.id%>?_method=DELETE' method="POST">
                     <button class = 'btn btn-xs btn-outline-danger'>Delete</button>
@@ -45,13 +45,10 @@
                                     <hr>
                                     <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
                                     <!--edit comment-->
-                                    <a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
-                                    <a class = 'btn btn-warning' href = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit'>
-                                Edit
-                                    </a>
+                                    <a class = 'btn btn-warning' href = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit'>Edit</a>
                                     <!--delete comment-->
                                     <form class = 'dbutton' action = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=Delete' method = 'POST'>
-                                        <button class = 'btn  btn-outline-danger'>Delete</button>
+                                        <button class = 'btn btn-danger'>Delete</button>
                                     </form>
                                     <% } %>
                                 </div>
