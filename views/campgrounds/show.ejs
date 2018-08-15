@@ -33,32 +33,33 @@
                     <div class = 'float-right'>
                         <a class = 'btn btn-xs btn-success' href = '/campgrounds/<%= campground._id %>/comments/new'>Add a comment</a>
                     </div>
-                    
                         <% campground.comments.forEach(function(comment){ %>
                             <div class = 'row'>
                                 <div class = 'col-md-12'>
-                                    <strong><%= comment.author.username %></strong>
-                                    <span class ='float-right'>8 days ago</span>
-                                    <p>
-                                        <%= comment.text %>
-                                    </p>
-                                    
-                                    <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
-                                    <div class = 'float-right'>
-                                        <!--edit comment-->
-                                        <a  href = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit' class = 'btn btn-sm btn-warning'>Edit</a>
-                                        <!--delete comment-->
-                                        <form class = 'dbutton' action = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=Delete' method = 'POST'>
-                                            <button class = 'btn btn-danger'>Delete</button>
-                                        </form>
-                                    </div>
-                                    <% } %>
-                                    <hr>
+                                    <div class = 'card'>
+                                        <div class = 'card-body'>
+                                            <div class = 'float-left'>
+                                                <strong><%= comment.author.username %></strong>
+                                                <p><%= comment.text %></p>
+                                            </div>
+                                            <div class = 'float-right'>
+                                                <p>8 days ago</p>
+                                                <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                                                    <!--edit comment-->
+                                                    <a  href = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit' class = 'btn btn-sm btn-warning'>Edit</a>
+                                                    <!--delete comment-->
+                                                    <form class = 'dbutton' action = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=Delete' method = 'POST'>
+                                                        <button class = 'btn btn-danger'>Delete</button>
+                                                    </form>
+                                                <% } %
+                                            </div>
+                                        </div>
+                                    </div>       
                                 </div>
                             </div>
-                            <% });%>
-                </div>
-            </div>     
+                        <% });%>
+                    </div>
+                </div>     
+            </div>
         </div>
-    </div>
 <% include ../partials/footer %>
