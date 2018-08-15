@@ -44,13 +44,16 @@
                                             </div>
                                             <div class = 'float-right'>
                                                 <p>8 days ago</p>
+
                                                 <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                                                <div class = 'float-right'>
                                                     <!--edit comment-->
                                                     <a  href = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit' class = 'btn btn-sm btn-warning'>Edit</a>
                                                     <!--delete comment-->
                                                     <form class = 'dbutton' action = '/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=Delete' method = 'POST'>
                                                         <button class = 'btn btn-danger'>Delete</button>
                                                     </form>
+                                                </div>
                                                 <% } %
                                             </div>
                                         </div>
