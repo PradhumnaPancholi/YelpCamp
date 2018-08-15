@@ -47,7 +47,7 @@ h1 {
     animation: imageAnimation 50s linear infinite;
 }
 
-.slideshow li:nth-child(1) { 
+/*.slideshow li:nth-child(1) { 
     background-image: url(http://i.imgur.com/K3mPv14.jpg) 
   }
 
