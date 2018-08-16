@@ -37,3 +37,7 @@ body{
 .active{
     height: 100%;
 }
+
+.d-block{
+    height: 100%; 
+}
