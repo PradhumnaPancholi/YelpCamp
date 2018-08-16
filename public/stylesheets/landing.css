@@ -1,4 +1,7 @@
 /*for landing page*/
+body{
+    height: 100%;
+}
 
 .main-text{
     position: absolute;
