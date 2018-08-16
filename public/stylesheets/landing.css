@@ -1,16 +1,12 @@
 /*for landing page*/
 
-h1 {
-    font-size: 4em;
-    text-shadow: 2px 2px 10px black;
-}
-
 .main-text{
     position: absolute;
     text-align: center;
-    top: 40vh;
+    top: 30%;
     width: 96.66666666666666%;
     color: #FFF;
+    z-index: 2;
 }
 
 .main-text h1{
