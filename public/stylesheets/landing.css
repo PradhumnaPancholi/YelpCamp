@@ -23,4 +23,14 @@
     padding: 0%;
 }
 
+.carousel-inner{
+    height: 100%;
+}
 
+.carousel-item{
+    height: 100%;
+}
+
+.active{
+    height: 100%;
+}
