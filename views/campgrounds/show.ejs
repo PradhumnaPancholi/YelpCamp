@@ -13,11 +13,11 @@
             <div class = 'card mb-3'>
                 <img class = 'img-fluid' src = "<%= campground.image %>">
                 <div class = 'card-body'>
-                    <p class = 'text-right'>$<%= campground.price %></p>
+                    <p class = 'text-right'>$<%= campground.price %>/night</p>
                     <h4><a class = 'card-title'><%= campground.name %></a></h4>
                     <p><%= campground.description %></p>
                     <em>Submitted by: <%= campground.author.username %></em>
-                </div>
+                
                 <!-- authorization-->
                 <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
                 <a class = 'btn btn-sm btn-warning' href = '/campgrounds/<%= campground._id %>/edit'>Edit</a>
@@ -26,6 +26,7 @@
                     <button class = 'btn btn-sm btn-outline-danger'>Delete</button>
                 </form>
                 <% } %>
+            </div>
             </div>
                 <!--=======================================================================================-->
             <div class = 'card'>

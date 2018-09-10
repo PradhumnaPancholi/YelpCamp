@@ -16,7 +16,7 @@
         <div class="row text-center">
             <% campgrounds.forEach(function(campground){ %>
                 <div class ="col-md-3 col-sm-6">
-                    <div class = "card">
+                    <div id="campcard" class = "card">
                         <img class = 'card-img-top' src ="<%= campground.image %>">
                         <div class="card-title">
                             <h4><%= campground.name%></h4>

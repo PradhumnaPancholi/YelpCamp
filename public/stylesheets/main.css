@@ -4,6 +4,11 @@ body{
 h1{
     text-align: center;
 }
+
+/*for card on index page*/
+#campcard{
+    margin: 3%;
+}
 /*for imges on index page*/
 .card-img-top{
     height: 200px;
