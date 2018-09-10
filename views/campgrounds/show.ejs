@@ -18,15 +18,15 @@
                     <p><%= campground.description %></p>
                     <em>Submitted by: <%= campground.author.username %></em>
                 
-                <!-- authorization-->
-                <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
-                <a class = 'btn btn-sm btn-warning' href = '/campgrounds/<%= campground._id %>/edit'>Edit</a>
-                <!--Delete-->
-                <form class = 'dbutton' action = '/campgrounds/<%=campground.id%>?_method=DELETE' method="POST">
-                    <button class = 'btn btn-sm btn-outline-danger'>Delete</button>
-                </form>
-                <% } %>
-            </div>
+                    <!-- authorization-->
+                    <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
+                    <a class = 'btn btn-outline-warning' href = '/campgrounds/<%= campground._id %>/edit'>Edit</a>
+                    <!--Delete-->
+                    <form class = 'dbutton' action = '/campgrounds/<%=campground.id%>?_method=DELETE' method="POST">
+                    <button class = 'btn btn-outline-danger'>Delete</button>
+                    </form>
+                    <% } %>
+                </div>
             </div>
                 <!--=======================================================================================-->
             <div class = 'card'>
@@ -34,6 +34,7 @@
                     <div class = 'float-right'>
                         <a class = 'btn btn-sm btn-success' href = '/campgrounds/<%= campground._id %>/comments/new'>Add a comment</a>
                     </div>
+                    <hr>
                         <% campground.comments.forEach(function(comment){ %>
                             <div class = 'row'>
                                 <div class = 'col-md-12'>
