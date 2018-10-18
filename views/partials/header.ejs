@@ -16,7 +16,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
                 <div class = "collapse navbar-collapse" id = "navbarText">
-                    <div class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto">
                         <% if(!currentUser){ %>
                             <a href = '/login' class = 'nav-item nav-link'>Log In</a>
                             <a href = '/register'class = 'nav-item nav-link'>Sign Up</a>
@@ -24,7 +24,7 @@
                             <a class = 'nav-item nav-link'><%= currentUser.username %></a>
                             <a href = '/logout' class = 'nav-item nav-link'>Log Out</a>
                         <% } %>
-                    </div>
+                    </ul>
                 </div>
         </nav>
         <!--for flash messages-->
