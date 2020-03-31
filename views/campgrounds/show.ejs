@@ -1,12 +1,11 @@
 <% include ../partials/header %>
-   <div class='container> 
     <div class = 'row'>
         <div class = 'col-md-3'>
             
             <div class = 'list-group'>
                 <p class = 'list-group-item active'><%= campground.name %></p>
-                <li class = 'list-group-item'>$<%= campground.price %>/night</li>
-                <li class = 'list-group-item'><%= campground.author.username %></li>
+                <li class = 'list-group-item'>Price: $<%= campground.price %>/night</li>
+                <li class = 'list-group-item'>Contact: <%= campground.author.username %></li>
             </div>
         </div>
         <div class = 'col-md-9'>
@@ -16,7 +15,7 @@
                     <p class = 'text-right'>$<%= campground.price %>/night</p>
                     <h4><a class = 'card-title'><%= campground.name %></a></h4>
                     <p><%= campground.description %></p><
-                    <em>Submitted by: <%= campground.author.username %>/em>
+                    <em>Submitted by: <%= campground.author.username %></em>
                 
                     <!-- authorization-->
                     <% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
@@ -67,5 +66,4 @@
                 </div>     
             </div>
         </div>
-      </div>
 <% include ../partials/footer %>
